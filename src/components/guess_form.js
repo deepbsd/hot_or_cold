@@ -6,8 +6,8 @@ export default function GuessForm(props) {
 	return (
 		<div className="">
 			<form className="">
-
-
+				<input value="testing">
+				</input>
 
 			</form>
 		</div>
@@ -15,5 +15,5 @@ export default function GuessForm(props) {
 }
 
 GuessForm.defaultProps = {
-	whatever: ''
+	whatever: 'wha?'
 }

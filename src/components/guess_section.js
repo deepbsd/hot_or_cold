@@ -1,8 +1,11 @@
 import React from 'react';
+import GuessForm from './guess_form';
+import GuessList from './guesslist';
+import GuessCount from './guesscount';
 
-import './hotorcold.css';
+import '../index.css';
 
-export default class Header extends React.Component {
+export default class GuessSection extends React.Component {
     constructor(props) {
         super(props);
         this.clickFuncName = this.clickFuncName.bind(this);
@@ -17,9 +20,13 @@ export default class Header extends React.Component {
 
     render(){
     	return (
-    		<GuessForm   />
-    		<GuessList   />
-    		<GuessCount   />
+        <div className="">
+      		<GuessForm  processGuess={this.props.processGuess} />
+
+      		<GuessList  guessList={this.props.guessList} />
+
+      		<GuessCount  guessCount={this.props.guessCount} />
+        </div>
     	);
     }
 
