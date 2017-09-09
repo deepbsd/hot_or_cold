@@ -1,17 +1,34 @@
 import React from 'react';
 
-import './hotorcold.css';
 
-export default function GuessForm(props) {
+export default class GuessForm extends React.Component {
+
+	constructor(props) {
+			super(props);
+			this.passIt = this.passIt.bind(this);
+			this.state = {
+					userGuess: ''
+			}
+	}
+
+	passIt(input){
+		this.setState({
+			userGuess: input
+		})
+
+	}
+
+render(){
 	return (
-		<div className="">
-			<form className="">
-				<input value="testing">
-				</input>
 
+			<form onSubmit={e => this.props.processGuess(e, this.state.userGuess)} >
+				<input className="text" type="number" maxLength="3" required disabled={this.props.gameEnd}
+				onChange={(e) => this.passIt(e.target.value)} ></input>
+				<input className="button" type="submit"></input>
 			</form>
-		</div>
+
 	);
+}
 }
 
 GuessForm.defaultProps = {

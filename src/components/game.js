@@ -53,9 +53,9 @@ export default class Game extends React.Component {
 
       render (){
         return (
-          <div >
+          <div  >
               <Header />
-              <GuessSection  />
+              <GuessSection />
           </div>
         )
       }
