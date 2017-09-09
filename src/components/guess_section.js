@@ -66,7 +66,7 @@ export default class GuessSection extends React.Component {
 
       		<GuessCount  guessCount={this.state.guessCount} />
 
-      		<GuessList  guessList={this.state.userGuesses.join(',')} />
+      		<GuessList  guessList={this.state.userGuesses.join(' ')} />
 
 
         </div>

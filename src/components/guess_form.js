@@ -10,7 +10,6 @@ export default class GuessForm extends React.Component {
 					userGuess: ''
 
 			}
-			this.passIt = this.passIt.bind(this);
 	}
 
 	resetForm(e){
@@ -39,11 +38,3 @@ render(){
 	);
 }
 }
-
-GuessForm.defaultProps = {
-	whatever: 'wha?'
-}
-
-/*
-onChange={(e) => this.passIt(e.target.value)} ></input>
-*/
