@@ -24,6 +24,7 @@ export default class GuessForm extends React.Component {
 		this.setState({
 			userGuess: input
 		})
+
 	}
 
 render(){
@@ -42,3 +43,7 @@ render(){
 GuessForm.defaultProps = {
 	whatever: 'wha?'
 }
+
+/*
+onChange={(e) => this.passIt(e.target.value)} ></input>
+*/
