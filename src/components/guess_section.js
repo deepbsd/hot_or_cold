@@ -13,6 +13,7 @@ export default class GuessSection extends React.Component {
         this.randomNumber = this.randomNumber.bind(this);
         this.state = {
           compNumber: this.randomNumber(),
+          gameEnd: false,
           userGuesses: [],
           userGuess: '',
           guessCount: 0,
@@ -34,6 +35,9 @@ export default class GuessSection extends React.Component {
       num = parseInt(num, 10);
       if (this.guessDifference(num)===0){
         messg = "You win!"
+        this.setState({
+          gameEnd: true
+        });
       } else if (this.guessDifference(num) <= 5){
         messg = 'Super Hot! (within 5)';
       } else if (this.guessDifference(num) <= 10){
@@ -58,7 +62,7 @@ export default class GuessSection extends React.Component {
     	return (
         <div className="game" >
         <h2>{this.state.feedback}</h2>
-      		<GuessForm  processGuess={this.processUserGuess} gameEnd={false} />
+      		<GuessForm  processGuess={this.processUserGuess} gameEnd={this.state.gameEnd} />
 
       		<GuessCount  guessCount={this.state.guessCount} />
 
