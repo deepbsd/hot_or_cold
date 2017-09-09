@@ -6,7 +6,7 @@ export default function GuessList(props) {
 
 
 	return (
-		<div className="guessBox clearfix">
+		<div className="guessBox">
 			{props.guessList}
 		</div>
 	);
