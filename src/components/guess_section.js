@@ -3,7 +3,7 @@ import GuessForm from './guess_form';
 import GuessList from './guesslist';
 import GuessCount from './guesscount';
 
-import '../index.css';
+
 
 export default class GuessSection extends React.Component {
     constructor(props) {

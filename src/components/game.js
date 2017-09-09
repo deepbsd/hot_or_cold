@@ -53,13 +53,9 @@ export default class Game extends React.Component {
 
       render (){
         return (
-          <div className="nav">
-              <Header className="nav" />
-              <GuessSection  processGuess={this.props.processUserGuess}
-              compN={this.state.compNumber}
-              guessList={JSON.stringify(this.state.userGuesses)}
-              guessCount={this.state.guessCount}
-              feedback={this.state.feedback}  />
+          <div >
+              <Header />
+              <GuessSection  />
           </div>
         )
       }

@@ -5,16 +5,20 @@ export default function Modal(props) {
 
 	return (
 
+			<div className="overlay">
 			<div className="content">
-				<h1>What do I do?</h1>
+				<h3>What do I do?</h3>
+				<div>
 					<p>This is a Hot or Cold Number Guessing Game. The game goes like this:</p>
-					<ol>
-						<li> I pick a random secret number between 1 to 100 and keep it hidden.</li>
-						<li> You need to guess until you can find the hidden secret number. </li>
-						<li> You will get feedback on how close ("hot") or far ("cold") your guess is.</li>
-					</ol>
+					<ul>
+						<li>1. I pick a <strong>random secret number</strong> between 1 to 100 and keep it hidden.</li>
+						<li>2. You need to <strong>guess</strong> until you can find the hidden secret number. </li>
+						<li>3. You will <strong>get feedback</strong> on how close ("hot") or far ("cold") your guess is.</li>
+					</ul>
 					<p>So, Are you ready?</p>
-					<div className="close" onClick={(e) => props.toggleModal(e)} >I got it</div>
+					<a className="close" onClick={(e) => props.toggleModal(e)}>I got it</a>
+					</div>
+			</div>
 			</div>
 
 		);
