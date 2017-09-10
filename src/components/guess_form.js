@@ -18,10 +18,11 @@ export default class GuessForm extends React.Component {
 		})
 	}
 
-	passIt(input){
+	passIt(e,input){
 		this.setState({
 			userGuess: input
 		})
+		e.target.value = ''
 	}
 
 render(){
@@ -30,7 +31,7 @@ render(){
 
 			<form onSubmit={e => this.props.processGuess(e, this.state.userGuess)} >
 				<input className="text" id="userInput" value={this.state.userGuess} type="number" maxLength="3" required disabled={this.props.gameEnd}
-				onChange={(e) => this.passIt(e.target.value)} ></input>
+				onChange={(e) => this.passIt(e, e.target.value)} ></input>
 				<input className="button" type="submit" disabled={this.props.gameEnd}></input>
 			</form>
 
