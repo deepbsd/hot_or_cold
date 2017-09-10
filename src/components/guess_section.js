@@ -17,7 +17,7 @@ export default class GuessSection extends React.Component {
           userGuesses: [],
           userGuess: '',
           guessCount: 0,
-          feedback: 'No feedback yet...'
+          feedback: 'Try to guess the secret number between 1 and 100!'
         };
     }
 
@@ -67,7 +67,6 @@ export default class GuessSection extends React.Component {
       		<GuessCount  guessCount={this.state.guessCount} />
 
       		<GuessList  guessList={this.state.userGuesses.join(' ')} />
-
 
         </div>
     	);
