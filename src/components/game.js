@@ -18,6 +18,7 @@ export default class Game extends React.Component {
         this.setState({
           gameEnd: true
         })
+        window.location.reload();
       }
 
       render (){
