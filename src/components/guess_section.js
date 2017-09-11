@@ -60,6 +60,7 @@ export default class GuessSection extends React.Component {
     }
 
     render(){
+      
     	return (
         <div className="game" >
         <h2>{this.state.feedback}</h2>
