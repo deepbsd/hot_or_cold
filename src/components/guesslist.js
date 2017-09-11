@@ -1,11 +1,38 @@
 import React from 'react';
 
-import GuessCount from './guesscount';
+
 
 export default function GuessList(props) {
+
+	const guesses = props.guessList.map((guess, index) => {
+			return <li key={index} >{guess}</li>
+	});
+
 	return (
-		<div className="">
-			<p>{props.guessList}</p>
+		<div>
+			<ul className="guessBox clearfix">
+			{guesses}
+			</ul>
 		</div>
 	);
 }
+
+
+
+/*
+
+import React from 'react';
+
+export default function GuessList (props) {
+
+  const guesses = props.theGuesses.map((guess, index) => {
+    return <li key={index}>{guess}</li>
+  });
+
+  return (
+    <ul className="guessBox clearfix">{guesses}</ul>
+  );
+
+};
+
+*/

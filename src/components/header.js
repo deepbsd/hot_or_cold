@@ -24,7 +24,8 @@ export default class Header extends React.Component {
       e.preventDefault();
       // Restart the game here
       console.log('Hey, better restart the game here');
-      alert('Restarting game...');
+      //alert('Restarting game...');
+      this.props.endFunc();
     }
 
     render() {

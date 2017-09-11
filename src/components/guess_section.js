@@ -13,7 +13,7 @@ export default class GuessSection extends React.Component {
         this.randomNumber = this.randomNumber.bind(this);
         this.state = {
           compNumber: this.randomNumber(),
-          gameEnd: false,
+          gameEnd: this.props.gameEnd,
           userGuesses: [],
           userGuess: '',
           guessCount: 0,
@@ -50,12 +50,13 @@ export default class GuessSection extends React.Component {
         messg = "Freezing! (greater than 30)";
       }
       console.log("number: ",this.state.compNumber,' mesg: ',messg);
-      this.setState({
+      // this.setState({
+      this.setState((prevState, props) => ({
         userGuess: num,
-        userGuesses: [...this.state.userGuesses, this.state.userGuess],
+        userGuesses: [...prevState.userGuesses, num],
         feedback: messg,
         guessCount: this.state.userGuesses.length
-      });
+      }));
     }
 
     render(){
@@ -66,7 +67,7 @@ export default class GuessSection extends React.Component {
 
       		<GuessCount  guessCount={this.state.guessCount} />
 
-      		<GuessList  guessList={this.state.userGuesses.join(' ')} />
+      		<GuessList  guessList={this.state.userGuesses} />
 
         </div>
     	);

@@ -6,36 +6,38 @@ export default class GuessForm extends React.Component {
 	constructor(props) {
 			super(props);
 			this.passIt = this.passIt.bind(this);
+			this.watchInput = this.watchInput.bind(this);
 			this.state = {
 					userGuess: ''
 			}
 	}
 
-	resetForm(e){
+	watchInput(e, input){
 		e.preventDefault();
 		this.setState({
-			userGuess: ''
+			userGuess: input
 		})
 	}
 
 	passIt(e,input){
 		e.preventDefault();
+		this.props.processGuess(e, input)
 		this.setState({
-			userGuess: input
+			userGuess: ''
 		})
-		//this.resetForm(e);
+
 	}
 
 render(){
-	let val = this.state.userGuess;
-	return (
 
-			<form onSubmit={e => this.props.processGuess(e, this.state.userGuess)} >
-				<input className="text" value={val} type="number" maxLength="3" required disabled={this.props.gameEnd}
-				onChange={(e) => this.passIt(e, e.target.value)} ></input>
-				<input className="button" type="submit" disabled={this.props.gameEnd}></input>
-			</form>
+		return (
 
-	);
-}
+				<form onSubmit={e => this.passIt(e, this.state.userGuess)} >
+					<input className="text" value={this.state.userGuess} type="number" maxLength="3" required disabled={this.props.gameEnd}
+					onChange={(e) => this.watchInput(e, e.target.value)} ></input>
+					<input className="button" type="submit" disabled={this.props.gameEnd}></input>
+				</form>
+
+		);
+	}
 }
