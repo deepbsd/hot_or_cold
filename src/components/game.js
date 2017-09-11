@@ -14,6 +14,7 @@ export default class Game extends React.Component {
 
       endGame(e){
         e.preventDefault();
+        console.log('this is endGame()');
         this.setState({
           gameEnd: true
         })
@@ -22,7 +23,7 @@ export default class Game extends React.Component {
       render (){
         return (
           <div  >
-              <Header endFunc={this.state.endGame} />
+              <Header endFunc={this.endGame.bind(this)} />
               <GuessSection endGame={this.state.gameEnd} />
           </div>
         )

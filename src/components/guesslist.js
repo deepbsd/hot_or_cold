@@ -16,23 +16,3 @@ export default function GuessList(props) {
 		</div>
 	);
 }
-
-
-
-/*
-
-import React from 'react';
-
-export default function GuessList (props) {
-
-  const guesses = props.theGuesses.map((guess, index) => {
-    return <li key={index}>{guess}</li>
-  });
-
-  return (
-    <ul className="guessBox clearfix">{guesses}</ul>
-  );
-
-};
-
-*/

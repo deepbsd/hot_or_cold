@@ -31,13 +31,11 @@ export default class GuessForm extends React.Component {
 render(){
 
 		return (
-
 				<form onSubmit={e => this.passIt(e, this.state.userGuess)} >
 					<input className="text" value={this.state.userGuess} type="number" maxLength="3" required disabled={this.props.gameEnd}
 					onChange={(e) => this.watchInput(e, e.target.value)} ></input>
 					<input className="button" type="submit" disabled={this.props.gameEnd}></input>
 				</form>
-
 		);
 	}
 }

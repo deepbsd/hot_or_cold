@@ -2,12 +2,15 @@ import React from 'react';
 import TopNavigation from './top_navigation';
 import Modal from './modal';
 
+
 import '../index.css';
 
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
+        this.props = props;
         this.handleClick = this.handleClick.bind(this);
+        this.restartGame = this.restartGame.bind(this);
         this.state = {
             modal: false,
         };
@@ -24,8 +27,8 @@ export default class Header extends React.Component {
       e.preventDefault();
       // Restart the game here
       console.log('Hey, better restart the game here');
-      //alert('Restarting game...');
-      this.props.endFunc();
+      // alert('Restarting game...');
+      this.props.endFunc(e);
     }
 
     render() {
