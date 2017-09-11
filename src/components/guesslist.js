@@ -1,13 +1,11 @@
 import React from 'react';
 
-
+import GuessCount from './guesscount';
 
 export default function GuessList(props) {
-
 	return (
-		<ul className="guessBox">
-			{props.guessList}
-		</ul>
+		<div className="">
+			<p>{props.guessList}</p>
+		</div>
 	);
-
 }
