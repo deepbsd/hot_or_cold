@@ -8,6 +8,7 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.restartGame = this.restartGame.bind(this);
         this.state = {
             modal: false,
         };
@@ -25,7 +26,7 @@ export default class Header extends React.Component {
       // Restart the game here
       console.log('Hey, better restart the game here');
       //alert('Restarting game...');
-      this.props.endFunc();
+      this.props.endFunc(e);
     }
 
     render() {
